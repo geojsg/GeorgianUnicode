@@ -1,11 +1,10 @@
 ### READ CSV UNICODE WITH GEORGIAN CHARACTERS
-geo_read.csv<-function(f,skip=0,header=T,method="UT8",colclass="character",trsheader=F) {
-	if (method=="UT8" | method=="BOM") {
+geo_read.csv<-function(f,skip=0,header=T,method="UTF8",colclass="character",trsheader=F) {
+	if (method=="UTF8" | method=="BOM") {
     table<-read.csv(f, encoding="UTF-8",skip=skip,header=header,colClasses=colclass)
   	if(method=="BOM")	names(table)[1]<-substring(names(table)[1],10)
 	}
   else {
-    #f<-"comrep/Ibank_Logs.csv"
     A <- readLines(con <- file(f, encoding = "UCS-2LE"))
     if(header) 
       {
@@ -45,20 +44,3 @@ geo_write.csv<-function (df,filename) {
 	}
 	close(con)
 }
-
-
-### ISSUE WITH COMA
-# t<-data.frame(A=c("sdf,sdf","sdf"), B=c(1,2))
-# t$A<-as.character(t$A)
-# library(stringi)
-# ut<-stri_trans_general(tolower(t$A),"Latin-Georgian")
-# t$ut<-ut
-# geo_write.csv(t,"t2.csv")
-
-####
-# geo2_read.csv<-function(f) {
-#   A <- readLines(con <- file("Ibank_Logs.csv", encoding = "UCS-2LE"))
-#   colnames<-strsplit(A[1],",")
-#   for 
-# }
-
