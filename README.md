@@ -8,4 +8,4 @@ First, it is important to identify in which encoding is your file.  For that, th
 
 
 *Note*: with MS Excel, when saving a xlsx format file with Georgian characters to CSV format, Georgian characters are replaced with '?' because it is not supported.  
-For that, I advise to use [this Excel adding](https://jaimonmathew.wordpress.com/2011/08/23/excel_addin_to_work_with_unicode_csv/)
+For that, I advise to use [this Excel add-in](https://jaimonmathew.wordpress.com/2011/08/23/excel_addin_to_work_with_unicode_csv/)
