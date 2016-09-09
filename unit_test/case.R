@@ -1,8 +1,10 @@
 ## UTF-8 with Latin Header
+geo_read.csv("unicode/sample_UTF8-lat-header.csv")
 
 ## UTF-8 with Georgian header
 
 ## UTF-8 BOM with Latin Header
+geo_read.csv("unicode/sample_UTF8-BOM-lat-header.csv",method="BOM")
 
 ## UTF-8 BOM with Georgian Header
 
