@@ -43,17 +43,13 @@ Output: CSV file encoded in UTF8-BOM
 Considerations:
 - geo_write.csv is NOT a wrapper to the write.csv file as it is writing a binary file (in order to save unicode characters)
 - if there is any comma in one of the fields, then fields will be saved between "". For example: "a,b","b" 
-- date will
-- 
+
 
 ## Important 
 
 These functions have not the ambition to solve all problem with Georgian characters.
 It was created to solve the encountered problems of encodings related to Georgian unicode characters.
 
-
-Considerations:
-- 
 
 
 
