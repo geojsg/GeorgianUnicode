@@ -25,7 +25,7 @@ Function geo_read.csv, a wrapper to the read.csv function with following paramet
 - colclass="character" by default and recommended (then 
 - trsheader=F by default, i.e. if there is header, there are in latin character. But if not, then the loading of the table will work only if the headers are transliterated in latin characters, setting: trsheader=T  
 
-Format supported :
+Encodings supported :
 - UTF8 (method="UT8)
 - UTF8-BOM (method="BOM")
 - UCS-2LE (method="UCS-2LE")
@@ -49,6 +49,7 @@ Considerations:
 
 These functions have not the ambition to solve all problem with Georgian characters.
 It was created to solve the encountered problems of encodings related to Georgian unicode characters.
+Feel free to take part in improving these functions and/or to report bugs.
 
 
 
