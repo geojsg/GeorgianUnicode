@@ -33,7 +33,8 @@ geo_write.csv<-function (df,filename) {
   df[,n]<-sapply(n, function (x) as.character(format(df[,x])))
   
   ## checking if comma
-  comma<-as.logical(sum(sapply(a,function(x) grepl(",",x))))
+  comma<-as.logical(sum(sapply(df,function(x) grepl(",",x))))
+  quto<-ifelse(comma,'\"',"")
   
 	BOM <- charToRaw('\xEF\xBB\xBF')
 	EOL<-"\r\n"
@@ -42,8 +43,7 @@ geo_write.csv<-function (df,filename) {
 	df_header<-paste(paste(names(df),collapse=","),EOL,sep="")
 
 	for (i in 1:nrow(df)) {
-		line<-paste(df_header,paste(df[i,],collapse=","),EOL,sep="")
-		if (grepl(",",paste(df[i,],collapse=""))) warning("there is comma")
+		line<-paste(df_header,quto,paste(df[i,],collapse=paste(quto,",",quto,sep="")),quto,EOL,sep="")
 		writeBin(charToRaw(line), con, endian="little")
 		df_header<-NULL
 	}
