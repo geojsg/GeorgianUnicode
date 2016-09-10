@@ -21,13 +21,13 @@ Function geo_read.csv, a wrapper to the read.csv function with following paramet
 - file : CSV file to load
 - skip=0 by default (to skip number of first line in csv file)
 - header=T by default (if the table in the csv file has header / column names or not)
-- method="UT8" by default (see below for chosig the method / encoding)
+- method="UTF-8" by default (see below for chosig the method / encoding)
 - colclass="character" by default and recommended (then 
 - trsheader=F by default, i.e. if there is header, there are in latin character. But if not, then the loading of the table will work only if the headers are transliterated in latin characters, setting: trsheader=T  
 
 Encodings supported :
-- UTF8 (method="UT8)
-- UTF8-BOM (method="BOM")
+- UTF8 (method="UTF-8")
+- UTF8-BOM (method="UTF-8-BOM")
 - UCS-2LE (method="UCS-2LE")
 
 See examples on in the files unit_test/case.R
@@ -38,7 +38,7 @@ Function geo_write.csv(mydataframe, filename) is writing a CSV file as binary fi
 - mydataframe must be a data.frame
 - filename : path and filename where the dataframe will be saved.
 
-Output: CSV file encoded in UTF8-BOM
+Output: CSV file encoded in UTF8-BOM (so that Georgian unicode character can be read with MS Excel)
 
 Considerations:
 - geo_write.csv is NOT a wrapper to the write.csv file as it is writing a binary file (in order to save unicode characters)
