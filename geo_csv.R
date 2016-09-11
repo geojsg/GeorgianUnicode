@@ -29,7 +29,7 @@ geo_read.csv<-function(f,skip=0,header=T,method="UTF-8",colclass="character",trs
 
 geo_write.csv<-function (df,filename) {
   ## Converting dates as characters
-  n<-names(df[,sapply(df, class)=="Date"])
+  n<-names(df[sapply(df, class)=="Date"])
   df[,n]<-sapply(n, function (x) as.character(format(df[,x])))
   
   ## checking if comma
